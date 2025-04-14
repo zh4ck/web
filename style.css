@@ -110,6 +110,10 @@ section{
     background-color: black;
 }
 
+iframe {
+    margin-top: 20px;
+}
+
 .home .home-content h1{
     font-size: 6rem;
     font-weight: 700;
@@ -126,9 +130,17 @@ span{
 
 .home-content h3 {
     font-size: 4rem;
-    margin-bottom: 1rem;
     font-weight: 700;
-    display: inline-block;
+    white-space: nowrap;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+  
+
+.home-content {
+    flex-shrink: 0;
 }
 
 
@@ -198,13 +210,14 @@ span{
 }
 
 .typing {
+    display: inline-block;
+    width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
     color: #b74b4b;
     font-weight: 700;
     font-size: inherit;
-    white-space: nowrap;
-    border-right: 2px solid #b74b4b;
-    display: inline;
-    overflow: hidden;
+    margin-left: 0.3ch;
 }
 
 .typing-text{
@@ -220,15 +233,6 @@ span{
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    border-right: 2px solid #b74b4b;
-    animation: blinkCursor 0.75s steps(1) infinite;
-}
-
-
-@keyframes cursor{
-    to{
-        border-left: 3px solid #b74b4b;
-    }
 }
 
 @media (max-width: 1000px){
@@ -256,19 +260,6 @@ span{
         margin-top: 4rem;
     }
 }
-
-@keyframes typing {
-    from { width: 0ch; }
-    to { width: 18ch; } /* Adjust based on longest word */
-}
-
-@keyframes blinkCursor {
-    0%   { border-color: #b74b4b; }
-    49%  { border-color: #b74b4b; }
-    50%  { border-color: transparent; }
-    100% { border-color: transparent; }
-}
-
 
 @keyframes wordLoop {
     0%, 20% { content: "Web Developer"; }
