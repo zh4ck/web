@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Diary</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --window-bg: rgba(255, 255, 255, 0.05);
+      --header-bg: rgba(255, 255, 255, 0.08);
+      --text-color: #ffffff;
+    }
+
+    body.light {
+      --bg-color: #f2f2f2;
+      --window-bg: rgba(255, 255, 255, 0.7);
+      --header-bg: rgba(240, 240, 240, 0.9);
+      --text-color: #000000;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transition: background 0.3s ease;
+    }
+
+    .notepad-window {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 16px;
+      background: var(--window-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .window-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: var(--header-bg);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .window-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background-color: #ff5f57; }
+    .dot-yellow { background-color: #ffbd2e; }
+    .dot-green { background-color: #28c840; }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .notepad-content {
+      padding: 24px;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .notepad-content p {
+      margin-bottom: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="notepad-window">
+    <div class="window-header">
+      <div class="window-dots">
+        <div class="window-dot dot-red"></div>
+        <div class="window-dot dot-yellow"></div>
+        <div class="window-dot dot-green"></div>
+      </div>
+      <button class="toggle-btn" onclick="toggleTheme()">☀️ | 🌙</button>
+    </div>
+    <div class="notepad-content">
+      <p>Dear Diary,</p>
+      <p>Today I finally started working on this blog concept I've been thinking about. It's simple, minimal, but inspired by the macOS UI I love so much.</p>
+      <p>The background is dark, like the night sky outside my window. The notepad in the middle? Just like a glowing piece of glass holding my thoughts.</p>
+      <p>Honestly, this is kind of fun. Maybe I'll keep writing.</p>
+      <p>Until next time,</p>
+      <p>Me.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
+</html>
