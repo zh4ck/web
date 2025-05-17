@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Diary</title>
   <style>
     :root {
@@ -32,7 +30,7 @@
 
     .notepad-window {
       width: 90%;
-      max-width: 700px;
+      max-width: 500px;
       border-radius: 16px;
       background: var(--window-bg);
       backdrop-filter: blur(10px);
@@ -91,49 +89,59 @@
     .notepad-content p {
       margin-bottom: 1.2em;
     }
+
+    .notepad-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-btn {
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: none;
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
   </style>
-</head>
-<body>
-  <div style="margin-top: 20px; text-align: center;">
-  <a href="../index.html" style="
-    font-family: monospace;
-    background: none;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    display: inline-block;
-  " onmouseover="this.style.background='rgba(255,255,255,0.1)'" 
-     onmouseout="this.style.background='none'">
-    ← Back to Dictionary
-  </a>
-</div>
-  <div class="notepad-window">
-    <div class="window-header">
-      <div class="window-dots">
-        <div class="window-dot dot-red"></div>
-        <div class="window-dot dot-yellow"></div>
-        <div class="window-dot dot-green"></div>
+  </head>
+  <body class="">
+    <div class="notepad-container">
+      <a class="back-btn" href="../index.html">← Back to Dictionary</a>
+      <div class="notepad-window">
+      <div class="window-header">
+        <div class="window-dots">
+          <div class="window-dot dot-red"></div>
+          <div class="window-dot dot-yellow"></div>
+          <div class="window-dot dot-green"></div>
+        </div>
+        <button class="toggle-btn" onclick="toggleTheme()">☀️ | 🌙</button>
       </div>
-      <button class="toggle-btn" onclick="toggleTheme()">☀️ | 🌙</button>
-    </div>
-    <div class="notepad-content">
-        <p>15 May, 2025</p>
-        <p>I look up to the skies, glazed with stars—</p>
-        <p>Wondering what lies beneath the galactic clouds.</p>
-        <p>Who, I wonder, is the true creator of this vast universe?</p>
-        <p>Honestly, I'm still searching for a sign of God in it all.</p>
-        <p>Until next time,</p>
-        <p>Me.</p>
+      <div class="notepad-content">
+          <p>15 May, 2025</p>
+          <p>I look up to the skies, glazed with stars—</p>
+          <p>Wondering what lies beneath the galactic clouds.</p>
+          <p>Who, I wonder, is the true creator of this vast universe?</p>
+          <p>Honestly, I'm still searching for a sign of God in it all.</p>
+          <p>Until next time,</p>
+          <p>Me.</p>
+      </div>
     </div>
   </div>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-    }
-  </script>
-</body>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('light');
+      }
+    </script>
+  </body>
 </html>
