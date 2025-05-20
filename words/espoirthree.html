@@ -1,0 +1,37 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Diary</title>
+  <link rel="stylesheet" src="style.css"/>
+  </head>
+  <body class="">
+    <div class="notepad-container">
+      <a class="back-btn" href="../dictionary.html">← Back to Dictionary</a>
+      <div class="notepad-window">
+      <div class="window-header">
+        <div class="window-dots">
+          <div class="window-dot dot-red"></div>
+          <div class="window-dot dot-yellow"></div>
+          <div class="window-dot dot-green"></div>
+        </div>
+        <button class="toggle-btn" onclick="toggleTheme()">☀️ | 🌙</button>
+      </div>
+      <div class="notepad-content">
+          <pre>
+            Espoirthree
+            Berasal dari dua bahasa
+            Espoir - France
+            Three - English
+
+            Espoir artinya apa?
+          </pre>
+      </div>
+    </div>
+  </div>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('light');
+      }
+    </script>
+  </body>
+</html>
